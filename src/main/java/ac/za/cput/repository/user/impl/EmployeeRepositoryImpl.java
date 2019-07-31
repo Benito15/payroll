@@ -17,7 +17,7 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
     }
 
 
-    public static EmployeeRepository getRepository()
+    public static EmployeeRepositoryImpl getRepository()
     {
         if(repository == null) repository = new EmployeeRepositoryImpl();
         return repository;
