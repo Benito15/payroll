@@ -15,7 +15,6 @@ public class EmployeeFactory {
                 .empFirstName(Misc.generateID())
                 .empFirstName(fname)
                 .empLastName(lname)
-
                 .build();
     }
 

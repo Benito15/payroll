@@ -34,10 +34,10 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
         Employee updatedEmployee = null;
 
         Employee hi = read(e.getEmpNumber());
-        if(e != null)
+        if(hi != null)
         {
            delete(e.getEmpNumber());
-            this.employees.add(e);
+            this.employees.add(hi);
             updatedEmployee = e;
         }
         return updatedEmployee;
