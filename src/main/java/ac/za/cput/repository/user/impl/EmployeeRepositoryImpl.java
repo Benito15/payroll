@@ -60,6 +60,6 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
 
     @Override
     public Set<Employee> getAll() {
-        return null;
+        return employees;
     }
 }
