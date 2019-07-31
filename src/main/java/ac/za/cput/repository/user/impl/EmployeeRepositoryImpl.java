@@ -8,7 +8,7 @@ import java.util.Set;
 
 public class EmployeeRepositoryImpl implements EmployeeRepository {
 
-    private static EmployeeRepository repository = null;
+    private static EmployeeRepositoryImpl repository = null;
     private Set<Employee> employees;
 
     private EmployeeRepositoryImpl()
@@ -57,5 +57,10 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
     public Employee read(String o) {
         return this.employees.stream().filter(e -> e.getEmpNumber().equals(o)).findAny()
                 .orElse(null);
+    }
+
+    @Override
+    public Set<Employee> getAll() {
+        return null;
     }
 }

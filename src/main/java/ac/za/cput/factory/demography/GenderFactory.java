@@ -1,4 +1,3 @@
-package ac.za.cput.factory.gender;
 
 import ac.za.cput.domain.demography.Gender;
 import ac.za.cput.util.Misc;
