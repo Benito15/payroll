@@ -24,31 +24,30 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
     }
 
     @Override
-    public Employee create(Employee e) {
-        this.employees.add(e);
-        return e;
+    public Employee create(Employee employee) {
+        this.employees.add(employee);
+        return employee;
     }
 
     @Override
-    public Employee update(Employee e) {
-        Employee updatedEmployee = null;
+    public Employee update(Employee employee) {
 
-        Employee hi = read(e.getEmpNumber());
-        if(e != null)
+        Employee updatedEmployee = read(employee.getEmpNumber());
+
+        if(updatedEmployee != null)
         {
-           delete(e.getEmpNumber());
-            this.employees.add(e);
-            updatedEmployee = e;
+            delete(employee.getEmpNumber());
+            this.employees.add(employee);
         }
         return updatedEmployee;
     }
 
     @Override
-    public void delete(String s) {
-        Employee e = read(s);
+    public void delete(String id) {
+        Employee e = read(id);
         if(e != null)
         {
-            this.employees.remove(s);
+            this.employees.remove(id);
         }
 
     }
