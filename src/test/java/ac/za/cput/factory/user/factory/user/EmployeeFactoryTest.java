@@ -1,6 +1,7 @@
-package ac.za.cput.factory.user;
+package ac.za.cput.factory.user.factory.user;
 
 import ac.za.cput.domain.user.Employee;
+import ac.za.cput.factory.user.EmployeeFactory;
 import org.junit.Assert;
 import org.junit.Test;
 

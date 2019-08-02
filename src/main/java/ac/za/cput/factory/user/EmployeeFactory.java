@@ -12,7 +12,7 @@ public class EmployeeFactory {
 
 
         return new Employee.Builder()
-                .empFirstName(Misc.generateID())
+                .empNumber(Misc.generateID())
                 .empFirstName(fname)
                 .empLastName(lname)
                 .build();

@@ -7,11 +7,6 @@ public class EmployeeGender {
     private EmployeeGender(){}
 
 
-    public EmployeeGender(Builder builder)
-    {
-        this.empNumber = builder.empNumber;
-        this.genderID = builder.genderID;
-    }
 
 
     public String getEmpNumber() {
@@ -45,23 +40,23 @@ public class EmployeeGender {
                 '}';
     }
 
-    public static class Builder {
-        private String empNumber, genderID;
-
-        public Builder empNumber(String empNumber) {
-            this.empNumber = empNumber;
-            return this;
-        }
-
-        public Builder genderID(String genderID) {
-            this.genderID = genderID;
-            return this;
-
-        }
-
-        public EmployeeGender build() {
-            return new EmployeeGender(this);
-        }
-
-    }
+    //public static class Builder {
+//        private String empNumber, genderID;
+//
+//        public Builder empNumber(String empNumber) {
+//            this.empNumber = empNumber;
+//            return this;
+//        }
+//
+//        public Builder genderID(String genderID) {
+//            this.genderID = genderID;
+//            return this;
+//
+//        }
+//
+//        public EmployeeGender build() {
+//            return new EmployeeGender(this);
+//        }
+//
+//    }
 }

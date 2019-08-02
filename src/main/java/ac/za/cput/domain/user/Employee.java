@@ -27,7 +27,17 @@ public class Employee {
         return empLastName;
     }
 
+    public void setEmpNumber(String empNumber) {
+        this.empNumber = empNumber;
+    }
 
+    public void setEmpFirstName(String empFirstName) {
+        this.empFirstName = empFirstName;
+    }
+
+    public void setEmpLastName(String empLastName) {
+        this.empLastName = empLastName;
+    }
 
     @Override
     public String toString() {
