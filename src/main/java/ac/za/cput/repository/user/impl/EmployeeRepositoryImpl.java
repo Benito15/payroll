@@ -32,12 +32,15 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
     @Override
     public Employee update(Employee employee) {
 
-        Employee updatedEmployee = read(employee.getEmpNumber());
+        Employee updatedEmployee = null;
 
-        if(updatedEmployee != null)
+        Employee readEmp = repository.read(employee.getEmpNumber());
+
+        if(readEmp != null)
         {
             delete(employee.getEmpNumber());
             this.employees.add(employee);
+            updatedEmployee = employee;
         }
         return updatedEmployee;
     }

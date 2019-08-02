@@ -1,5 +1,7 @@
 package ac.za.cput.domain.user;
 
+import java.util.Objects;
+
 public class Employee {
 
     private String empNumber, empFirstName, empLastName;
@@ -87,5 +89,18 @@ public class Employee {
             this.empLastName = employee.empLastName;
             return employee;
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Employee employee = (Employee) o;
+        return Objects.equals(empNumber, employee.empNumber);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(empNumber);
     }
 }
