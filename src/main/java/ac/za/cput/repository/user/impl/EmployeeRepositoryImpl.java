@@ -33,15 +33,20 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
     public Employee update(Employee employee) {
 
         Employee readEmp = repository.read(employee.getEmpNumber());
+       // Employee inrepo = repository.read(employee.getEmpNumber());
+
 
         if(readEmp != null)
         {
+
+            //inrepo.setEmpFirstName(employee.getEmpFirstName());
+
             this.employees.remove(employee.getEmpNumber());
           //  delete(employee.getEmpNumber());
             //this.employees.add(employee);
             this.employees.add(employee);
         }
-        return employee;
+        return readEmp;
     }
 
     @Override
@@ -49,7 +54,7 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
         Employee e = read(id);
         if(e != null)
         {
-            this.employees.remove(id);
+            this.employees.remove(e);
         }
 
     }

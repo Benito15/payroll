@@ -4,7 +4,7 @@ public class EmployeeGender {
 
     private String empNumber, genderID;
 
-    private EmployeeGender(){}
+    public EmployeeGender(){}
 
 
 
@@ -25,6 +25,8 @@ public class EmployeeGender {
         this.genderID = genderID;
     }
 
+
+    //this is the method for linking the factory class, high-level abstractions.
     public EmployeeGender empGen(String empNumber, String genderID)
     {
         this.empNumber = empNumber;
@@ -40,23 +42,9 @@ public class EmployeeGender {
                 '}';
     }
 
-    //public static class Builder {
-//        private String empNumber, genderID;
-//
-//        public Builder empNumber(String empNumber) {
-//            this.empNumber = empNumber;
-//            return this;
-//        }
-//
-//        public Builder genderID(String genderID) {
-//            this.genderID = genderID;
-//            return this;
-//
-//        }
-//
-//        public EmployeeGender build() {
-//            return new EmployeeGender(this);
-//        }
-//
-//    }
+    //no need for builder class, this is going to be a high level abstraction.
+
+
+
+
 }
