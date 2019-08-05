@@ -37,10 +37,11 @@ public class GenderRepositoryImpl implements GenderRepository {
         Gender updatedGender = read(gender.getId());
 
         if (updatedGender != null) {
-            delete(gender.getId());
+            //delete(gender.getId());
+            this.genders.remove(updatedGender);
             this.genders.add(gender);
         }
-        return updatedGender;
+        return null;
     }
 
     @Override

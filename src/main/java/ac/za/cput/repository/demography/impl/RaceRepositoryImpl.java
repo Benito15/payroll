@@ -38,10 +38,11 @@ public class RaceRepositoryImpl implements RaceRepository {
 
         if(updatedRace != null)
         {
-            delete(race.getRaceID());
+           // delete(race.getRaceID());
+            this.races.remove(updatedRace);
             this.races.add(race);
         }
-        return updatedRace;
+        return null;
     }
 
     @Override
