@@ -41,12 +41,23 @@ public class RaceRepositoryImplTest {
     public void update() {
         Race race = RaceFactory.buildRace("Male");
         this.repository.create(race);
-        Race readRace = repository.read(race.getRaceID());
-        System.out.println(readRace);
-        readRace.setDesc("female");
-        Race updatedRace = this.repository.update(readRace);
-        System.out.println(updatedRace);
-        Assert.assertEquals(race.getRaceID(), updatedRace.getRaceID());
+
+        Race updatedRace = RaceFactory.buildRace("Female");
+
+        updatedRace.setRaceID(race.getRaceID());
+
+
+        repository.update(updatedRace);
+
+
+//        Race readRace = repository.read(race.getRaceID());
+//        System.out.println(readRace);
+//        readRace.setDesc("female");
+//        Race updatedRace = this.repository.update(readRace);
+//        System.out.println(updatedRace);
+
+
+        Assert.assertNotEquals(race.getDesc(), updatedRace.getDesc());
 
     }
 
