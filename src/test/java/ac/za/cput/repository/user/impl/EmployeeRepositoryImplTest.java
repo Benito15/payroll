@@ -68,6 +68,7 @@ public class EmployeeRepositoryImplTest {
         Employee employee = EmployeeFactory.buildEmployee("Rugal", "lugal");
         this.repository.create(employee);
         Employee readEmp = repository.read(employee.getEmpNumber());
+
         Assert.assertTrue(this.repository.getAll().size() > 0);
         System.out.println(this.repository.getAll().size());
        // Employee deletedEmp = this.repository.read(readEmp.getEmpNumber());
@@ -81,15 +82,15 @@ public class EmployeeRepositoryImplTest {
 
     }
 
-    @Test
-    public void read() {
-        Employee employee = EmployeeFactory.buildEmployee("Bennie", "Benassi");
-        this.repository.create(employee);
-        Employee readEmp = repository.read(employee.getEmpNumber());
-        Assert.assertEquals(employee.getEmpNumber(), readEmp.getEmpNumber());
-        System.out.println("hehehehe");
+@Test
+public void read() {
+    Employee employee = EmployeeFactory.buildEmployee("Bennie", "Benassi");
+    this.repository.create(employee);
+    Employee readEmp = repository.read(employee.getEmpNumber());
+    Assert.assertEquals(employee.getEmpNumber(), readEmp.getEmpNumber());
+    System.out.println("hehehehe");
 
-    }
+}
 
     @Test
     public void getAll() {

@@ -16,7 +16,7 @@ public class RaceRepositoryImpl implements RaceRepository {
         this.races = new HashSet<>();
     }
 
-    public static RaceRepository getRepository()
+    public static RaceRepositoryImpl getRepository()
     {
         if(repository == null) repository = new RaceRepositoryImpl();
         return repository;
@@ -28,7 +28,8 @@ public class RaceRepositoryImpl implements RaceRepository {
     }
 
     @Override
-    public Race create(Race race) {
+    public Race create(Race race)
+    {
         this.races.add(race);
         return race;    }
 
@@ -42,15 +43,15 @@ public class RaceRepositoryImpl implements RaceRepository {
             this.races.remove(updatedRace);
             this.races.add(race);
         }
-        return null;
+        return race;
     }
 
     @Override
-    public void delete(String s) {
-        Race e = read(s);
+    public void delete(String id) {
+        Race e = read(id);
         if(e != null)
         {
-            this.races.remove(s);
+            this.races.remove(e);
         }
     }
 
