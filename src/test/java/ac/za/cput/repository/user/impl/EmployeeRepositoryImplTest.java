@@ -46,19 +46,19 @@ public class EmployeeRepositoryImplTest {
         Employee employee = EmployeeFactory.buildEmployee("Benito", "lastname");
         this.repository.create(employee);
 
-        Employee readEmp = repository.read(employee.getEmpNumber());
+       // Employee readEmp = repository.read(employee.getEmpNumber());
 
-        System.out.println(readEmp);
+        Employee updatedEmployee = EmployeeFactory.buildEmployee("lorenzo", "lastname");
 
-        readEmp.setEmpFirstName("updatedBenito");
-        System.out.println(readEmp);
 
-        Employee updateEmp = repository.update(readEmp);
-        System.out.println(updateEmp);
-        Assert.assertEquals(updateEmp.getEmpFirstName(), employee.getEmpFirstName());
+        updatedEmployee.setEmpNumber(employee.getEmpNumber());
+
+
+       // Employee updateEmp = repository.update(readEmp);
+        this.repository.update(updatedEmployee);
+
+        Assert.assertNotEquals(employee.getEmpFirstName(), updatedEmployee.getEmpFirstName());
         System.out.println(  "--------------");
-        System.out.println(updateEmp.getEmpFirstName());
-        System.out.println( employee.getEmpFirstName());
 
 
     }

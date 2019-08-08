@@ -16,7 +16,7 @@ public class GenderRepositoryImpl implements GenderRepository {
     }
 
 
-    public static GenderRepository getRepository() {
+    public static GenderRepositoryImpl getRepository() {
         if (repository == null) repository = new GenderRepositoryImpl();
         return repository;
     }
@@ -48,7 +48,7 @@ public class GenderRepositoryImpl implements GenderRepository {
     public void delete(String s) {
         Gender e = read(s);
         if (e != null) {
-            this.genders.remove(s);
+            this.genders.remove(e);
         }
     }
 
