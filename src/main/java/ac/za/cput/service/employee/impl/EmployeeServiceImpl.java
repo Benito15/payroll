@@ -9,7 +9,7 @@ import java.util.Set;
 
 public class EmployeeServiceImpl implements EmployeeService {
 
-    private EmployeeServiceImpl service = null;
+    private static EmployeeServiceImpl service = null;
     private EmployeeRepository repository;
 
 
@@ -18,7 +18,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         repository = EmployeeRepositoryImpl.getRepository();
     }
 
-    public  EmployeeServiceImpl getService()
+    public static EmployeeServiceImpl getService()
     {
         if(service == null)return  new EmployeeServiceImpl();
         return  service;

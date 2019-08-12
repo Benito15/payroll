@@ -10,7 +10,7 @@ import java.util.Set;
 
 public class RaceServiceImpl implements RaceService {
 
-    private RaceServiceImpl service = null;
+    private static RaceServiceImpl service = null;
     private RaceRepository repository;
 
 
@@ -19,7 +19,7 @@ public class RaceServiceImpl implements RaceService {
         repository = RaceRepositoryImpl.getRepository();
     }
 
-    public  RaceServiceImpl getService()
+    public static RaceServiceImpl getService()
     {
         if(service == null)return  new RaceServiceImpl();
         return  service;
