@@ -30,9 +30,9 @@ public class RaceServiceImplTest {
 
     @Test
     public void create() {
-        String description = "Male";
-        Race race = RaceFactory.buildRace( "Female");
-        Race race2 =  RaceFactory.buildRace("male");
+        String description = "white";
+        Race race = RaceFactory.buildRace( "black");
+        Race race2 =  RaceFactory.buildRace("white");
 
         service.create(race);
         service.create(race2);
@@ -45,9 +45,9 @@ public class RaceServiceImplTest {
 
     @Test
     public void update() {
-        String newdescription = "Male";
+        String newdescription = "white";
 
-        Race race = RaceFactory.buildRace( "Female");
+        Race race = RaceFactory.buildRace( "black");
         Race race2 = RaceFactory.buildRace( newdescription);
 
          race2.setRaceID(race.getRaceID());
@@ -63,7 +63,7 @@ public class RaceServiceImplTest {
 
     @Test
     public void delete() {
-        Race race = RaceFactory.buildRace( "Female");
+        Race race = RaceFactory.buildRace( "black");
         service.create(race);
         Race readRace1 = service.read(race.getRaceID());
         Assert.assertTrue(this.service.getAll().size() > 0);
@@ -75,7 +75,7 @@ public class RaceServiceImplTest {
 
     @Test
     public void read() {
-        Race race = RaceFactory.buildRace( "Female");
+        Race race = RaceFactory.buildRace( "black");
         service.create(race);
         Race readRace1 = service.read(race.getRaceID());
         Assert.assertNotNull(readRace1);

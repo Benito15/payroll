@@ -7,4 +7,7 @@ import java.util.Set;
 
 public interface EmployeeService extends IService<Employee,String> {
     Set<Employee>getAll();
+    void createFullEmployee(String empNumber,String fname, String lname, String raceID, String genderID);
+    //void createFullEmployee(Employee employee, String raceID, String genderID);
+
 }

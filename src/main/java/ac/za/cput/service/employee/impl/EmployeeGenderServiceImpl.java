@@ -10,8 +10,9 @@ import java.util.Set;
 
 public class EmployeeGenderServiceImpl implements EmployeeGenderService {
 
-    private EmployeeGenderServiceImpl service = null;
+    private static EmployeeGenderServiceImpl service = null;
     private EmployeeGenderRepository repository;
+
 
 
     private  EmployeeGenderServiceImpl()
@@ -19,7 +20,7 @@ public class EmployeeGenderServiceImpl implements EmployeeGenderService {
         repository = EmployeeGenderRepositoryImpl.getEmployeeGenderRepository();
     }
 
-    public  EmployeeGenderServiceImpl getService()
+    public static EmployeeGenderServiceImpl getService()
     {
         if(service == null)return  new EmployeeGenderServiceImpl();
         return  service;

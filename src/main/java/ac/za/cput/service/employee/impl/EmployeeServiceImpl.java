@@ -1,7 +1,14 @@
 package ac.za.cput.service.employee.impl;
 
 import ac.za.cput.domain.user.Employee;
+import ac.za.cput.factory.user.EmployeeFactory;
+import ac.za.cput.repository.demography.GenderRepository;
+import ac.za.cput.repository.demography.RaceRepository;
+import ac.za.cput.repository.demography.impl.GenderRepositoryImpl;
+import ac.za.cput.repository.demography.impl.RaceRepositoryImpl;
+import ac.za.cput.repository.user.EmployeeGenderRepository;
 import ac.za.cput.repository.user.EmployeeRepository;
+import ac.za.cput.repository.user.impl.EmployeeGenderRepositoryImpl;
 import ac.za.cput.repository.user.impl.EmployeeRepositoryImpl;
 import ac.za.cput.service.employee.EmployeeService;
 
@@ -9,13 +16,21 @@ import java.util.Set;
 
 public class EmployeeServiceImpl implements EmployeeService {
 
+
     private static EmployeeServiceImpl service = null;
     private EmployeeRepository repository;
+    private EmployeeGenderRepository employeeGenderRepository;
+    private RaceRepository raceRepository;
+    private GenderRepository genderRepository;
+
 
 
     private  EmployeeServiceImpl()
     {
         repository = EmployeeRepositoryImpl.getRepository();
+        employeeGenderRepository = EmployeeGenderRepositoryImpl.getEmployeeGenderRepository();
+        raceRepository = RaceRepositoryImpl.getRepository();
+        genderRepository = GenderRepositoryImpl.getRepository();
     }
 
     public static EmployeeServiceImpl getService()
@@ -27,6 +42,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public Set<Employee> getAll() {
         return repository.getAll();    }
+
 
     @Override
     public Employee create(Employee employee) {
@@ -48,4 +64,14 @@ public class EmployeeServiceImpl implements EmployeeService {
     public Employee read(String s) {
         return this.repository.read(s);
     }
+
+
+    @Override
+    public void createFullEmployee(String empNumber, String fname, String lname, String raceID, String genderID) {
+
+        Employee employee = EmployeeFactory.buildEmployee("fname", "lname");
+        this.repository.create( employee);
+
+    }
+
 }

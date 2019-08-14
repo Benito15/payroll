@@ -41,7 +41,7 @@ public class EmployeeGenderRepositoryImpl implements EmployeeGenderRepository {
     @Override
     public EmployeeGender update(EmployeeGender employeeGender) {
         //A taste of both slices of cake.
-        EmployeeGender readEmp = repository.read(employeeGender.getEmpNumber());
+        EmployeeGender readEmp = read(employeeGender.getEmpNumber());
 
         if (readEmp != null) {
 
