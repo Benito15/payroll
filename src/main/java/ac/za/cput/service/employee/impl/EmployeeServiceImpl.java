@@ -3,9 +3,11 @@ package ac.za.cput.service.employee.impl;
 import ac.za.cput.domain.demography.Gender;
 import ac.za.cput.domain.demography.Race;
 import ac.za.cput.domain.user.Employee;
+import ac.za.cput.domain.user.EmployeeGender;
 import ac.za.cput.factory.demography.GenderFactory;
 import ac.za.cput.factory.demography.RaceFactory;
 import ac.za.cput.factory.user.EmployeeFactory;
+import ac.za.cput.factory.user.EmployeeGenderFactory;
 import ac.za.cput.repository.demography.GenderRepository;
 import ac.za.cput.repository.demography.RaceRepository;
 import ac.za.cput.repository.demography.impl.GenderRepositoryImpl;
@@ -71,17 +73,21 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 
     @Override
-    public void createFullEmployee(String empNumber, String fname, String lname, String raceID, String genderID) {
+    public Employee createFullEmployee(String empNumber, String fname, String lname, String raceID, String genderID) {
 
-        Employee employee = EmployeeFactory.buildEmployee("Benito", "Kriel");
+        Employee employee = EmployeeFactory.buildEmployee(fname, lname);
         this.repository.create( employee);
 
-        Race race = RaceFactory.buildRace("black");
+        Race race = RaceFactory.buildRace(raceID);
         this.raceRepository.create(race);
 
-        Gender gender = GenderFactory.buildGender("Male");
-        this.genderRepository.create(gender);
+        Gender gender = GenderFactory.buildGender(genderID);
+        genderRepository.create(gender);
 
+        EmployeeGender employeeGender = EmployeeGenderFactory.buildEmployeeGender(empNumber,genderID);
+        employeeGenderRepository.create(employeeGender);
+
+        return employee;
 
     }
 

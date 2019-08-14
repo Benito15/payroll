@@ -16,7 +16,7 @@ public class GenderRepositoryImpl implements GenderRepository {
     }
 
 
-    public static GenderRepositoryImpl getRepository() {
+    public static GenderRepository getRepository() {
         if (repository == null) repository = new GenderRepositoryImpl();
         return repository;
     }
