@@ -1,6 +1,10 @@
 package ac.za.cput.service.employee.impl;
 
+import ac.za.cput.domain.demography.Gender;
+import ac.za.cput.domain.demography.Race;
 import ac.za.cput.domain.user.Employee;
+import ac.za.cput.factory.demography.GenderFactory;
+import ac.za.cput.factory.demography.RaceFactory;
 import ac.za.cput.factory.user.EmployeeFactory;
 import ac.za.cput.repository.demography.GenderRepository;
 import ac.za.cput.repository.demography.RaceRepository;
@@ -69,8 +73,15 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public void createFullEmployee(String empNumber, String fname, String lname, String raceID, String genderID) {
 
-        Employee employee = EmployeeFactory.buildEmployee("fname", "lname");
+        Employee employee = EmployeeFactory.buildEmployee("Benito", "Kriel");
         this.repository.create( employee);
+
+        Race race = RaceFactory.buildRace("black");
+        this.raceRepository.create(race);
+
+        Gender gender = GenderFactory.buildGender("Male");
+        this.genderRepository.create(gender);
+
 
     }
 
