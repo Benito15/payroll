@@ -14,11 +14,11 @@ public class GenderRepositoryImplTest {
 
     public GenderRepositoryImpl repository;
 
-    @Before
-    public void setUp() throws Exception {
-
-        repository = GenderRepositoryImpl.getRepository();
-    }
+//    @Before
+//    public void setUp() throws Exception {
+//
+//        repository = GenderRepositoryImpl.getRepository();
+//    }
 
     @Test
     public void getAll() {

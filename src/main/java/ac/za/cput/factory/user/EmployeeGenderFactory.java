@@ -12,3 +12,13 @@ public class EmployeeGenderFactory {
 
 }
 
+//    public static Employee buildEmployee(String fname, String lname )
+//    {
+//
+//
+//        return new Employee.Builder()
+//                .empNumber(Misc.generateID())
+//                .empFirstName(fname)
+//                .empLastName(lname)
+//                .build();
+//    }

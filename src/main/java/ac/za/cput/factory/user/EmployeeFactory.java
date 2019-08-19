@@ -18,4 +18,9 @@ public class EmployeeFactory {
                 .build();
     }
 
+    public static Employee buildEmployee(Employee employee)
+    {
+        employee.copy(employee);
+        return employee;
+    }
 }

@@ -82,15 +82,16 @@ public class Employee {
             return new Employee(this);
         }
 
-        public Employee copy(Employee employee)
-        {
-            this.empNumber = employee.empNumber;
-            this.empFirstName = employee.empFirstName;
-            this.empLastName = employee.empLastName;
-            return employee;
-        }
+
     }
 
+    public Employee copy(Employee employee)
+    {
+        this.empNumber = employee.empNumber;
+        this.empFirstName = employee.empFirstName;
+        this.empLastName = employee.empLastName;
+        return employee;
+    }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

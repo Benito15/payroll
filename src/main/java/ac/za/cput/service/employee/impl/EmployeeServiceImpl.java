@@ -75,19 +75,57 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public Employee createFullEmployee(String empNumber, String fname, String lname, String raceID, String genderID) {
 
-        Employee employee = EmployeeFactory.buildEmployee(fname, lname);
-        this.repository.create( employee);
+//        Employee employee = EmployeeFactory.buildEmployee(fname, lname);
+//        this.repository.create( employee);
+//
+//        Race race = RaceFactory.buildRace(raceID);
+//        this.raceRepository.create(race);
+//
+//        Gender gender = GenderFactory.buildGender(genderID);
+//        genderRepository.create(gender);
+//
+//        EmployeeGender employeeGender = EmployeeGenderFactory.buildEmployeeGender(empNumber,genderID);
+//        employeeGenderRepository.create(employeeGender);
+//
+//        return employee;
+        //Employee emp = EmployeeFactory.buildEmployee("scs","sc");
 
-        Race race = RaceFactory.buildRace(raceID);
-        this.raceRepository.create(race);
+
+
+        Employee employee = EmployeeFactory.buildEmployee(fname,lname);
+        if(employee == null)
+        {
+            return null;
+        }
 
         Gender gender = GenderFactory.buildGender(genderID);
-        genderRepository.create(gender);
+        if(gender == null)
+        {
+            return null;
+        }
 
-        EmployeeGender employeeGender = EmployeeGenderFactory.buildEmployeeGender(empNumber,genderID);
-        employeeGenderRepository.create(employeeGender);
+        Race race = RaceFactory.buildRace(raceID);
+        if(race == null)
+        {
+            return null;
+        }
+
+
+        EmployeeGender employeeGender = EmployeeGenderFactory.buildEmployeeGender(genderID,raceID);
+        if(employeeGender == null)
+        {
+            return null;
+        }
 
         return employee;
+
+
+    }
+
+    @Override
+    public Employee copyEmployee(Employee employee) {
+
+        return null;
 
     }
 

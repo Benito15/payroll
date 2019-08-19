@@ -8,6 +8,7 @@ import java.util.Set;
 public interface EmployeeService extends IService<Employee,String> {
     Set<Employee>getAll();
     Employee createFullEmployee(String empNumber,String fname, String lname, String raceID, String genderID);
+    Employee copyEmployee(Employee employee);
     //void createFullEmployee(Employee employee, String raceID, String genderID);
 
 }

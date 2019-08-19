@@ -35,18 +35,14 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
         Employee readEmp = repository.read(employee.getEmpNumber());
        // Employee inrepo = repository.read(employee.getEmpNumber());
 
-
-        if(readEmp != null)
+        if(this.employees.contains(employee))
         {
-
-            //inrepo.setEmpFirstName(employee.getEmpFirstName());
-
-            this.employees.remove(employee.getEmpNumber());
+            this.employees.remove(readEmp.getEmpNumber());
           //  delete(employee.getEmpNumber());
             //this.employees.add(employee);
             this.employees.add(employee);
         }
-        return readEmp;
+        return null;
     }
 
     @Override
