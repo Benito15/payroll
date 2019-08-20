@@ -7,7 +7,7 @@ import java.util.Objects;
 public class Order {
 
     private String orderID;
-    private Customer customer;
+    private String custID;
     private double orderTotal;
 
     private Order(){}
@@ -16,14 +16,14 @@ public class Order {
     {
         this.orderID = builder.orderID;
         this.orderTotal = builder.orderTotal;
-        this.customer = builder.customer;
+        this.custID = builder.custID;
 
     }
 
-    public Customer getCustomer(Customer customer)
+    public String getCustID(String custID)
     {
-        this.customer = customer;
-        return customer;
+        this.custID = custID;
+        return custID;
     }
 
     public String getOrderID() {
@@ -47,7 +47,7 @@ public class Order {
     public String toString() {
         return "Order{" +
                 "orderID='" + orderID + '\'' +
-                ", Customer=" + customer +
+                ", custID=" + custID+
                 ", orderTotal=" + orderTotal +
                 '}';
     }
@@ -56,11 +56,11 @@ public class Order {
     {
         private String orderID;
         private double orderTotal;
-        private Customer customer;
+        private String custID;
 
-        public Builder getCustomer(Customer customer)
+        public Builder getCustomer(String custID)
         {
-            this.customer = customer;
+            this.custID = custID;
             return this;
         }
 
