@@ -10,8 +10,15 @@ public class OrderLineFactory {
         return new OrderLine.Builder().amount(amount)
                 .description(description)
                 .qty(qty)
-                .build().orderLine(orderID, itemID);
+                .build().getorderLineID(orderID, itemID);
 
     }
+
+//    public static OrderLine buildOrderLineID(String orderID, String itemID)
+//    {
+//        return new OrderLine().getorderLineID(orderID, itemID);
+//    }
+
+
 
 }

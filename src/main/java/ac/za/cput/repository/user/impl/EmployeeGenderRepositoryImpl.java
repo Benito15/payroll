@@ -68,6 +68,7 @@ public class EmployeeGenderRepositoryImpl implements EmployeeGenderRepository {
 
         @Override
         public EmployeeGender read (String s){
+
             return this.employeeGenders.stream().filter(e -> e.getEmpNumber().equals(s)).findAny()
                     .orElse(null);
         }

@@ -25,7 +25,7 @@ public class OrderLine {
 
     }
 
-    public OrderLine orderLine(String orderID, String itemID)
+    public OrderLine getorderLineID(String orderID, String itemID)
     {
         this.orderID = orderID;
         this.itemID = itemID;
@@ -89,7 +89,7 @@ public class OrderLine {
 
 public static class Builder
     {
-        private String itemID;
+      //  private String itemID;
         private String description;
         private int qty;
         private double amount;

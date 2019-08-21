@@ -6,10 +6,11 @@ import ac.za.cput.util.Misc;
 
 public class OrderFactory {
 
-    public static Order buildOrder(double grandTotal, Customer cust)
+    public static Order buildOrder(double grandTotal, String custID)
     {
         return new Order.Builder().orderID(Misc.generateID())
-                .orderTotal(grandTotal).getCustomer(cust).build();
+                .orderTotal(grandTotal)
+                .getCustID(custID).build();
 
     }
 

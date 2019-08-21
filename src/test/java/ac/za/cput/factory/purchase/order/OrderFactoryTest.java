@@ -13,7 +13,7 @@ public class OrderFactoryTest {
     @Test
     public void buildOrder() {
         Customer customer = CustomerFactory.buildCustomer("Bennie",500);
-        Order order = OrderFactory.buildOrder(500,customer);
+        Order order = OrderFactory.buildOrder(500, customer.getCustID());
         Assert.assertNotNull(order);
         System.out.println(order);
 

@@ -58,7 +58,7 @@ public class Order {
         private double orderTotal;
         private String custID;
 
-        public Builder getCustomer(String custID)
+        public Builder getCustID(String custID)
         {
             this.custID = custID;
             return this;
