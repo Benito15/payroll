@@ -56,9 +56,9 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
     }
 
     @Override
-    public Employee read(String o) {
+    public Employee read(String id) {
         return this.employees.stream().filter(e ->
-                e.getEmpNumber().equals(o)).findAny()
+                e.getEmpNumber().equals(id)).findAny()
                 .orElse(null);
     }
 
