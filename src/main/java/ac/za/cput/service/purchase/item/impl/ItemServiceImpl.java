@@ -22,8 +22,9 @@ public class ItemServiceImpl implements ItemService {
     }
 
     public static ItemServiceImpl getService()
+
     {
-        if(service == null)return  new ();
+        if(service == null)return  new ItemServiceImpl ();
         return  service;
     }
 
